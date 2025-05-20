@@ -1,33 +1,38 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unavailable Games</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
   <header class="header">
-    <nav class="nav container">
+    <div class="container nav">
       <a href="index.html" class="logo">Unavailable Games</a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main class="main-landing container">
-    <section class="hero">
-      <h1>Unavailable Games</h1>
-      <p>Innovating immersive gaming experiences with creativity and passion.</p>
-      <a href="about.html" class="btn-primary">Discover More</a>
+  <main class="content">
+    <section class="hero dark-bg">
+      <h1 class="molten-text">Welcome to Unavailable Games</h1>
+      <p>We create epic experiences in the Roblox universe.</p>
+      <a href="https://discord.gg/YOURINVITE" class="button">Join our Discord</a>
     </section>
   </main>
 
-  <footer class="footer container">
-    <p>© 2025 Unavailable Games</p>
+  <footer class="footer">
+    &copy; 2025 Unavailable Games. All rights reserved. <br />
+    Contact: <a href="https://discord.gg/YOURINVITE">Discord</a>
   </footer>
 </body>
 </html>
