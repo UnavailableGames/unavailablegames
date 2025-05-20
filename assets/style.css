@@ -1,209 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+/* style.css for Unavailable Games */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --dark-bg: #0b0b0b;
+  --lava-orange: #ff5e00;
+  --lava-glow: #ff3c00;
+  --stone-gray: #1a1a1a;
+  --text-light: #f0f0f0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #0b0b0b; /* almost black */
-  color: #f0f0f0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
 }
 
 .header {
+  background-color: var(--stone-gray);
+  border-bottom: 2px solid var(--lava-orange);
   padding: 1rem 0;
-  background: #140a0a;
-  box-shadow: 0 0 20px #ff3c00aa; /* lava glow */
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 1.75rem;
-  color: #ff3c00; /* lava orange */
-  letter-spacing: 3px;
+  font-size: 1.5rem;
+  color: var(--lava-orange);
+  font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
-  text-shadow: 0 0 8px #ff3c00cc;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 1rem;
 }
 
 .nav-links a {
-  color: #e0e0e0aa;
+  color: var(--text-light);
   text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  padding: 0.5rem 0;
-  border-bottom: 3px solid transparent;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #ff5a1a;
-  text-shadow: 0 0 10px #ff5a1acc;
-  border-bottom: 3px solid #ff5a1a;
+.nav-links a:hover {
+  color: var(--lava-orange);
 }
 
 .main-landing {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 0;
+  min-height: 90vh;
   text-align: center;
-  flex-direction: column;
-  gap: 1.5rem;
-  background: radial-gradient(ellipse at center, #3a0d0d 0%, #0b0b0b 80%);
+  padding: 0 1rem;
+  background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
 }
 
 .hero h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  letter-spacing: 6px;
-  color: #ff4b00;
-  text-shadow: 0 0 30px #ff4b00cc;
-  animation: flicker 3s infinite;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #f0f0f0cc;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 30px #ff4b00cc;
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.7;
-    text-shadow: none;
-  }
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #bbb;
 }
 
 .btn-primary {
-  display: inline-block;
-  background: linear-gradient(45deg, #ff4500, #ff8c00);
-  color: #1b0700;
-  padding: 0.85rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 800;
+  background-color: var(--lava-orange);
+  border: none;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
   text-decoration: none;
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 0 15px #ff4500aa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 15px var(--lava-glow);
+  transition: background 0.3s;
 }
 
 .btn-primary:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #ff8c00cc;
+  background-color: var(--lava-glow);
+}
+
+.molten-text {
+  background: linear-gradient(90deg, #ff3c00, #ff7e00, #ff3c00);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: lavaFlow 3s infinite linear;
+}
+
+@keyframes lavaFlow {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 .footer {
-  padding: 1rem 0;
   text-align: center;
-  background: #140a0a;
-  color: #c0c0c0aa;
-  font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow: 0 -2px 15px #ff3c00aa;
-}
-
-.about-page, .projects-page, .contact-page {
-  padding: 4rem 0;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.about-page h1, .projects-page h1, .contact-page h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #ff3c00;
-  text-align: center;
-  margin-bottom: 2rem;
-  letter-spacing: 5px;
-  text-shadow: 0 0 15px #ff3c00cc;
-}
-
-.glass-card {
-  background: rgba(40 10 10 / 0.85);
-  border-radius: 20px;
-  padding: 2rem 3rem;
-  box-shadow: 0 0 25px #ff3c0070;
-  border: 1px solid #ff3c0022;
-  color: #f0f0f0;
-  transition: transform 0.3s ease;
-  margin-bottom: 2rem;
-}
-
-.glass-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 45px #ff5a1a;
-}
-
-.glass-card h2 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #ff6f33;
-  letter-spacing: 1.5px;
-}
-
-.discord-card a.btn-primary {
-  background: linear-gradient(45deg, #ff5722, #ff3c00);
-  color: #fff;
-  box-shadow: 0 0 20px #ff5722cc;
-}
-
-.discord-card a.btn-primary:hover {
-  background: linear-gradient(45deg, #ff3c00, #ff5722);
-  box-shadow: 0 0 35px #ff3c00cc;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
-  }
-
-  .nav-links {
-    gap: 1.25rem;
-  }
-
-  .about-page, .projects-page, .contact-page {
-    padding: 2rem 1rem;
-  }
+  padding: 1rem;
+  background-color: var(--stone-gray);
+  border-top: 2px solid var(--lava-orange);
+  color: #888;
+  font-size: 0.9rem;
 }
