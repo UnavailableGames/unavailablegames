@@ -1,120 +1,187 @@
-/* style.css for Unavailable Games */
-
-:root {
-  --dark-bg: #0b0b0b;
-  --lava-orange: #ff5e00;
-  --lava-glow: #ff3c00;
-  --stone-gray: #1a1a1a;
-  --text-light: #f0f0f0;
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background-color: var(--dark-bg);
-  color: var(--text-light);
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  line-height: 1.6;
 }
 
+/* Navigation */
 .header {
-  background-color: var(--stone-gray);
-  border-bottom: 2px solid var(--lava-orange);
+  background-color: #1a1a1a;
   padding: 1rem 0;
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.2);
+  border-bottom: 2px solid #ff4000;
 }
 
 .nav {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 1rem;
 }
 
 .logo {
-  font-size: 1.5rem;
-  color: var(--lava-orange);
+  font-size: 1.8rem;
   font-weight: bold;
+  color: #ff6600;
   text-decoration: none;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--lava-orange);
-}
-
-.main-landing {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-  text-align: center;
-  padding: 0 1rem;
-  background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #bbb;
-}
-
-.btn-primary {
-  background-color: var(--lava-orange);
-  border: none;
-  color: black;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+.dropbtn {
+  background-color: #111;
+  color: #ff6600;
+  padding: 0.6rem 1rem;
   font-size: 1rem;
+  border: none;
   cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 0 15px var(--lava-glow);
+  border-radius: 8px;
   transition: background 0.3s;
 }
 
-.btn-primary:hover {
-  background-color: var(--lava-glow);
+.dropbtn:hover {
+  background-color: #2a2a2a;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #333;
+}
+
+.dropdown-content a {
+  color: #f1f1f1;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(#0d0d0d, #1a0a00);
 }
 
 .molten-text {
-  background: linear-gradient(90deg, #ff3c00, #ff7e00, #ff3c00);
-  background-size: 200% auto;
-  color: transparent;
+  font-size: 3rem;
+  background: linear-gradient(120deg, #ff3300, #ff9900, #cc0000);
   background-clip: text;
   -webkit-background-clip: text;
-  animation: lavaFlow 3s infinite linear;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(255, 60, 0, 0.5);
+  font-weight: 800;
 }
 
-@keyframes lavaFlow {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
+.button {
+  background-color: #ff4000;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+  display: inline-block;
+  transition: background 0.3s;
 }
 
+.button:hover {
+  background-color: #cc3300;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  background-color: #141414;
+}
+
+.dark-bg {
+  background-color: #1a0a00;
+  padding: 4rem 2rem;
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 0 10px rgba(255, 60, 0, 0.1);
+  max-width: 250px;
+  text-align: center;
+}
+
+.team-member h3 {
+  color: #ff6600;
+  margin-bottom: 0.5rem;
+}
+
+.project-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border-left: 5px solid #ff4000;
+  padding: 1.5rem;
+  max-width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
 .footer {
   text-align: center;
-  padding: 1rem;
-  background-color: var(--stone-gray);
-  border-top: 2px solid var(--lava-orange);
-  color: #888;
-  font-size: 0.9rem;
+  padding: 2rem;
+  background-color: #0d0d0d;
+  border-top: 2px solid #ff4000;
+  color: #bbb;
+}
+
+.footer a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
